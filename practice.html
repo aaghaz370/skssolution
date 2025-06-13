@@ -1,0 +1,227 @@
+<!-- Full updated code with service cards opening modals -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKS Hitech - Clean Water. Clean Future.</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
+    .modal-content ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+    .card {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- ... existing navbar and hero ... -->
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>Comprehensive MEP solutions for all your needs</p>
+    <div class="grid">
+      <div class="card" onclick="openModal(0)">
+        <div class="icon">🌊</div>
+        <h3>Water / Waste Water Treatment</h3>
+        <p>Complete solutions for water and waste water treatment systems.</p>
+      </div>
+      <div class="card" onclick="openModal(1)">
+        <div class="icon">🌡️</div>
+        <h3>Cooling / Boiler Water Treatment</h3>
+        <p>Expert services for cooling systems and boiler water treatment.</p>
+      </div>
+      <div class="card" onclick="openModal(2)">
+        <div class="icon">💧</div>
+        <h3>RO / UF System</h3>
+        <p>Installation and maintenance of RO/UF systems for water purification.</p>
+      </div>
+      <div class="card" onclick="openModal(3)">
+        <div class="icon">🏊</div>
+        <h3>Swimming Pool Services</h3>
+        <p>Complete swimming pool maintenance and chemical treatment.</p>
+      </div>
+      <div class="card" onclick="openModal(4)">
+        <div class="icon">🛠️</div>
+        <h3>AHU / FCU Service</h3>
+        <p>Professional cleaning services for AHU and FCU systems.</p>
+      </div>
+      <div class="card" onclick="openModal(5)">
+        <div class="icon">♻️</div>
+        <h3>Solid Waste Management</h3>
+        <p>Efficient solid waste management and disposal solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Service Image">
+      <h3 id="modalTitle"></h3>
+      <ul id="modalList"></ul>
+    </div>
+  </div>
+
+  <!-- Rest of sections stay same... -->
+
+  <script>
+    const modal = document.getElementById("serviceModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalList = document.getElementById("modalList");
+
+    const servicesData = [
+      {
+        title: "Water / Waste Water Treatment",
+        image: "assets/hero.jpg",
+        points: [
+          "STP & ETP Design",
+          "Installation & Commissioning",
+          "24/7 Maintenance Support",
+          "Eco-friendly Technology",
+          "Fully Automated Systems",
+          "Remote Monitoring",
+          "PLC-based Control",
+          "Sludge Handling Solutions",
+          "AMC Available",
+          "Government Compliance"
+        ]
+      },
+      {
+        title: "Cooling / Boiler Water Treatment",
+        image: "assets/images/boiler.jpg",
+        points: [
+          "Chemical Dosing Systems",
+          "Boiler Descaling",
+          "Cooling Tower Management",
+          "Corrosion Control",
+          "Energy Efficiency",
+          "Online Monitoring",
+          "Certified Chemicals",
+          "Risk Assessment",
+          "Water Quality Testing",
+          "Expert Technicians"
+        ]
+      },
+      {
+        title: "RO / UF System",
+        image: "assets/images/ro.jpg",
+        points: [
+          "RO Plant Installation",
+          "UF System Design",
+          "Membrane Cleaning",
+          "Hardness Removal",
+          "TDS Reduction",
+          "Energy-efficient Units",
+          "Annual Maintenance Contract",
+          "Automatic Flushing",
+          "Custom Capacity Design",
+          "User Training Provided"
+        ]
+      },
+      {
+        title: "Swimming Pool Services",
+        image: "assets/images/pool.jpg",
+        points: [
+          "Pool Construction",
+          "Filtration Systems",
+          "Chemical Balancing",
+          "pH Monitoring",
+          "Algae Prevention",
+          "Pump Maintenance",
+          "Filter Replacement",
+          "Swimming Pool AMC",
+          "Safety Inspections",
+          "On-demand Visits"
+        ]
+      },
+      {
+        title: "AHU / FCU Service",
+        image: "assets/images/ahu.jpg",
+        points: [
+          "AHU Coil Cleaning",
+          "Filter Replacement",
+          "Motor Inspection",
+          "Drain Tray Cleaning",
+          "Odor Removal",
+          "Air Flow Testing",
+          "Duct Disinfection",
+          "Energy Optimization",
+          "Noise Reduction",
+          "Comprehensive AMC"
+        ]
+      },
+      {
+        title: "Solid Waste Management",
+        image: "assets/images/waste.jpg",
+        points: [
+          "Waste Segregation Setup",
+          "Dry & Wet Collection",
+          "On-site Composting",
+          "Recyclable Material Sorting",
+          "Sanitary Disposal",
+          "Odor Control",
+          "Plastic Management",
+          "Bulk Waste Solutions",
+          "Municipal Guidelines",
+          "Sustainability Goals"
+        ]
+      }
+    ];
+
+    function openModal(index) {
+      const service = servicesData[index];
+      modalTitle.innerText = service.title;
+      modalImage.src = service.image;
+      modalList.innerHTML = service.points.map(point => `<li>${point}</li>`).join('');
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) closeModal();
+    }
+  </script>
+</body>
+</html>
