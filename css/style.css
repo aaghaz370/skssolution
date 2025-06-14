@@ -304,7 +304,7 @@ form button:hover {
 
 .social-card {
   background: #fff;
-  width: 180px;
+  width: 160px;
   padding: 15px;
   border-radius: 12px;
   text-align: center;
@@ -324,7 +324,7 @@ form button:hover {
 .chat-button {
   display: inline-block;
   padding: 8px 14px;
-  background-color: #007bff;
+  background-color: #002f5f;
   color: white;
   border-radius: 6px;
   text-decoration: none;
@@ -332,7 +332,7 @@ form button:hover {
 }
 
 .chat-button:hover {
-  background-color: #005bb5;
+  background-color: #001e3d;
 }
 
 
