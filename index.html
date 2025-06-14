@@ -295,19 +295,85 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="#">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Submit</button>
-    </form>
+  
+  <!-- Contact Section -->
+<!-- Include in <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Get in touch with us for any inquiries about our services or to request a quote. Our team is ready to assist you.</p>
+
+  <!-- Contact Cards -->
+  <div class="contact-cards">
+    <div class="contact-card">
+      <i class="fa fa-phone contact-icon" style="color:#d91e18;"></i>
+      <h3>Phone</h3>
+      <p>+91 9082285234<br>+91 9004841262<br>+91 22-44543323</p>
+    </div>
+    <div class="contact-card">
+      <i class="fa fa-envelope contact-icon" style="color:#d91e18;"></i>
+      <h3>Email</h3>
+      <p>info@msttechnical.com<br>msttechnical2001@gmail.com</p>
+    </div>
+    <div class="contact-card">
+      <i class="fa fa-map-marker contact-icon" style="color:#d91e18;"></i>
+      <h3>Address</h3>
+      <p>G-14 Ekta Co-Op Housing Society<br>Rani Sati Road, Opp. Balajee Hospital<br>Malad East, Mumbai 400097</p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <form action="https://formsubmit.co/agazafzal983@email.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name *" required>
+    <input type="email" name="email" placeholder="Email Address *" required>
+    <input type="tel" name="mobile" placeholder="Mobile Number">
     
-    <p><h2>Telegram <a href="https://t.me/+TJ4OQedW4PE4MTdl">Chat Now</a></h2></p>
-    <i class="fa fa-whatsapp" style="font-size:36px"></i>
+    <select name="service" required>
+      <option value="" disabled selected>Select Service Required</option>
+      <option>Sewage Treatment Plant</option>
+      <option>Effluent Treatment Plant</option>
+      <option>Waste Management</option>
+      <option>Fire & Safety</option>
+      <option>Other</option>
+    </select>
     
-  </section>
+    <textarea name="message" rows="5" placeholder="Message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Social Media Contact Box -->
+  <div class="social-box">
+    <div class="social-card whatsapp">
+      <i class="fa fa-whatsapp"></i>
+      <h4>WhatsApp</h4>
+      <a href="https://wa.me/919999999999" target="_blank" class="chat-button">Chat Now</a>
+    </div>
+    <div class="social-card telegram">
+      <i class="fa fa-telegram"></i>
+      <h4>Telegram</h4>
+      <a href="https://t.me/+TJ4OQedW4PE4MTdl" target="_blank" class="chat-button">Chat Now</a>
+    </div>
+    <div class="social-card linkedin">
+      <i class="fa fa-linkedin"></i>
+      <h4>LinkedIn</h4>
+      <a href="https://linkedin.com" target="_blank" class="chat-button">Chat Now</a>
+    </div>
+    <div class="social-card facebook">
+      <i class="fa fa-facebook"></i>
+      <h4>Facebook</h4>
+      <a href="https://facebook.com" target="_blank" class="chat-button">Chat Now</a>
+    </div>
+    <div class="social-card instagram">
+      <i class="fa fa-instagram"></i>
+      <h4>Instagram</h4>
+      <a href="https://instagram.com" target="_blank" class="chat-button">Chat Now</a>
+    </div>
+  </div>
+</section>
+
+
 
   <footer>
     <p>&copy; 2025 SKS HITECH. All rights reserved.</p>
