@@ -304,23 +304,21 @@ form button:hover {
 
 .social-box{
   margin-top:50px;
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  /* flex-wrap:wrap; */
   justify-content: center;
   gap:1rem;
 }
 
 @media(max-width: 768px) {
   .social-box {
-    flex-direction:row;
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    justify-content:flex-start;
+    grid-template-columns:repeat(2,1fr);
   }
+}
 
-  .social-card{
-    min-width:150px;
-    flex-shrink:0;
+@media(max-width: 769px) {
+  .social-box {
+    grid-template-columns:repeat(auto-fit,minmax(150px, 1fr));
   }
 }
 
