@@ -496,9 +496,9 @@ footer {
 }
 
 #about-us {
-  max-width: 900px;         /* Limit width to 900px */
-  margin: 0 auto;           /* Center horizontally */
-  padding: 4rem 2rem;       /* Top-bottom and side padding */
+  max-width: 900px;         
+  margin: 0 auto;           
+  padding: 4rem 2rem;       
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
