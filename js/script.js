@@ -204,3 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   showSlide(currentSlide); // Show first slide
   setInterval(nextSlide, 5000); // Change every 5 seconds
+
+
+  
+  
+  
+ 
+
+

@@ -23,7 +23,7 @@
       <li><a href="#industries">Industries</a></li>
       <li><a href="#benefits">Benefits</a></li>
       <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#location">Location</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -182,19 +182,174 @@
     </ul>
   </section>
 
-  <section id="certifications">
+  <!-- <section id="certifications">
     <h2>Certifications</h2>
     <div class="logos">
       <img src="assets/result.png" alt="Cert 1">
       <img src="assets/result1.png" alt="Cert 2">
       <img src="assets/result2.png" alt="Cert 3">
     </div>
-  </section>
+  </section> -->
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="carousel-container" id="carouselContainer">
+    <button class="arrow left" id="leftArrow">&#10094;</button>
 
-  <section id="projects">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="cert-card">
+        <img src="assets/result.png" alt="Cert 1" />
+        <p>ISO Certification</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result1.png" alt="Cert 2" />
+        <p>Green Building Cert.</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result2.png" alt="Cert 3" />
+        <p>Environmental Approval</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result.png" alt="Cert 4" />
+        <p>Health Safety Cert.</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result.png" alt="Cert 4" />
+        <p>Health Safety Cert.</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result.png" alt="Cert 4" />
+        <p>Health Safety Cert.</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result.png" alt="Cert 4" />
+        <p>Health Safety Cert.</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/result.png" alt="Cert 4" />
+        <p>Health Safety Cert.</p>
+      </div>
+    </div>
+
+    <button class="arrow right" id="rightArrow">&#10095;</button>
+  </div>
+</section>
+
+<style>
+    #certifications {
+  padding: 40px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 90%;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cert-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 250px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #444;
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  left: -10px;
+}
+
+.arrow.right {
+  right: -10px;
+}
+
+</style>
+
+<script>
+    const track = document.getElementById("carouselTrack");
+const leftArrow = document.getElementById("leftArrow");
+const rightArrow = document.getElementById("rightArrow");
+const container = document.getElementById("carouselContainer");
+
+const cardWidth = 270; // width + gap
+
+let scrollAmount = 0;
+
+// Scroll Right
+function scrollRight() {
+  if (scrollAmount + container.offsetWidth >= track.scrollWidth) {
+    scrollAmount = 0; // reset to start
+  } else {
+    scrollAmount += cardWidth;
+  }
+  track.scrollTo({ left: scrollAmount, behavior: "smooth" });
+}
+
+// Scroll Left
+function scrollLeft() {
+  if (scrollAmount <= 0) {
+    scrollAmount = track.scrollWidth - container.offsetWidth; // jump to end
+  } else {
+    scrollAmount -= cardWidth;
+  }
+  track.scrollTo({ left: scrollAmount, behavior: "smooth" });
+}
+
+// Event Listeners
+rightArrow.addEventListener("click", scrollRight);
+leftArrow.addEventListener("click", scrollLeft);
+
+// Auto Slide
+setInterval(scrollRight, 5000);
+
+</script>
+
+
+  
+  <section id="location">
   <h2>Our Work Locations</h2>
   <iframe
-    src="https://www.google.com/maps?q=Office+No.+E20,+Amarsocial+Welfare+Society,+G+N+C+Jaiswal+Nagar,+Near+Punjab+Dairy,+Malad+East,+Mumbai&output=embed"
+    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d792.2012147029727!2d72.86925768563968!3d19.179241399556005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sOffice%20No.%20E20%2C%20Amarsocial%20Welfare%20Society%2C%20G%20N%20C%20Jaiswal%20Nagar%2C%20Near%20Punjab%20Dairy%2C%20Malad%20%20East%20Mumbai!5e0!3m2!1sen!2sin!4v1749902845098!5m2!1sen!2sin"
     width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </section>
